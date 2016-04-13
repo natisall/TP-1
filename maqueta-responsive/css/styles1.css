@@ -1,0 +1,853 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,700);
+/*font-family: 'Raleway', sans-serif;*//*todos los h*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+/*font-family: 'Open Sans', sans-serif;*//*todos los textos*/
+
+/*SELECTOR UNIVERSAL*//*box-sizing no lo toma en azul pero si lo aplica*/
+
+*{
+	box-sizing: border-box;
+}
+
+header{
+	padding: 20px;
+	margin: 0 auto;
+	max-width: 1200px;
+	background-color: white;
+	position:fixed;
+	top:0;
+	right: 0;
+	left:0;
+	z-index: 600;
+}
+
+nav{
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+.cleaner{
+	clear: both;
+}
+
+nav li{
+	display: inline-block;
+	margin-left: 15px;
+}
+
+nav a{
+	color: gray;
+}
+
+body{
+	margin: 0px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+a{
+	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: "200";
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/*header*/
+.menu-inicial{
+	font-size: 12px;
+}
+
+/*/header*/
+
+/*contenedor inicial*/
+.contenedor-inicial{
+	background: url(../materiales/images/indexbanner-bg3.jpg) no-repeat center top;
+	min-height: 500px;
+	margin-top: 70px;
+}
+
+.wrapper{
+	max-width: 1200px;
+	/*background-color: rgba(255,0,0,0.5);*/
+	margin: 40px 80px;
+}
+
+.main-title{
+	color: white;
+	font-size: 40px;
+	margin: 280px 0 0;
+	display: inline-block;
+}
+
+/*SELECTOR DE HERMANO ADYACENTE, da estilo a un elemento que se encuentre inmediatamente despues de otro siempre y cuando sean hermanos,
+que esten dentro del mismo contenedor*/
+.main-title + p{
+	color: white;
+	font-size: 18px;
+	width: 500px;
+	line-height: 37px;
+	margin: 15px 0 0;
+}
+
+.buscador{
+	position: relative;
+	margin-top: 230px
+}
+/* relative al padre para que la posicion absoluta del boton tenga de ref los ejes del elemento padre*/
+
+.buscador input[type=serch]{
+	/*width: calc(100% - 200px);*/
+	width: 84%;
+	height: 70px;
+	border: solid 1px #ccc;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 0 210px 0 30px;
+}
+
+/* otra opcion:
+	width: calc(100%-200px)  +  padding para que el texto no toque los bordes*/
+
+.buscador button{
+	/*width: 200px;*/
+	width: 16%;
+	height: 70px;
+	background-color: #63BBDE;
+	font-family: inherit;
+	font-size: 18px;
+	color: 	white;
+	border: none;
+	border-radius: 0px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+
+/*posicionamiento de servicios-destacados*/
+/*PSEUDO CLASE:  :hover   setea el elemento para que tome las caracteristicas cuando se psa por encima del mismo, evento roll over
+sobre un selector ya existente*/
+
+.servicios-destacos{
+	margin-top: 130px;
+}
+
+.servicios-destacos article{
+	text-align: center;
+	width: 25%;
+	float: left;
+	padding: 0 20px;
+}
+
+.servicios-destacos article img{
+	width: 33.333333%;
+	transition: all 250ms ease-in;
+	-webkit-transition: all 500ms ease-in;
+}
+
+.servicios-destacos article:hover img{
+	transform: rotate(360deg) scale(1.2);
+	-ms-transform: rotate(90deg) scale(1.2);
+	box-shadow: 0 0 12px black;
+	border-radius: 100%
+}
+/*.servicios-destacos article:hover{
+	background-color: #ccc;
+}*/
+
+
+
+.servicios-destacos h2{
+	font-size: 15px;
+	margin-top: 20px;
+}
+
+.servicios-destacos p{
+	font-size: 12px;
+	font-weight: 200;
+}
+/*la variente no estaria bien*/
+
+.services{
+	/*background-color: yellow;*/
+	margin-top: 100px;	
+	position: relative;
+}
+
+.subtitle{
+	text-align: center;
+	font-size: 40px;
+}
+
+.subtitle + p{
+	text-align: center;
+	font-size: 18px;
+	color: #333;
+}
+
+/*POSICIONAMIENTO CARACTERISTICAS*/
+
+.caracteristicas{
+	float: left;
+	width: 29.1666%;
+	margin-top:120px;
+	padding-right: 20px;
+}
+
+.imagen-mitad{
+	float: left;
+	right: 300px;
+	top: 100px;
+	width: 25%;
+	margin-top: 80px;
+	margin-left: 8.3%;
+	margin-right:8.3%;
+}
+ /*AGREFO ESTA REGLA PARA QUE LA IMG SEA FLUIDA AL TAMAÑO DEL CONTEDOR QUE VARIA CUANDO MODIFICO EL VIEWPORT*/
+.imagen-mitad img{
+	width: 100%
+}
+
+.carac-izq article{
+	position: relative;
+	padding-right: 60px;
+	text-align: right;
+	margin-bottom: 60px;
+}
+
+.carac-izq article img{
+	position: absolute;
+	right: 0;
+	top: -15px;
+}
+
+.carac-der article{
+	position: relative;
+	padding-left: 60px;
+	margin-bottom: 60px;
+}
+
+.carac-der article img{
+	position: absolute;
+	left: 0;
+	top: -15px;
+}
+
+
+
+
+
+
+/*esta imagen deberi ir hasta los bordes del servidor, no a los del body--->SOLUCION: GENERAR OTRA SECCION PARA QUE ESE CONTEDOR VAYA 
+HASTA EL BORDE, LE DORY UN MIN-WEIGHT PARA QUE CREZCA*/
+.contenedor-secundario{
+	background: url(../materiales/images/pricing-bg.jpg) no-repeat center top;
+	margin-top: -125px;
+	min-height: 400px;
+}
+
+.tabla-precios h2{
+	text-align: center;
+	font-size: 40px;
+	margin: 0;
+	padding-top: 130px;
+}
+
+.tabla-precios p{
+	text-align: center;
+	font-size: 18px;
+}
+
+/*4 tablas*/
+/*.tabla, td, tr{
+	padding: 0;
+}*/
+
+.contenido {
+	/*width: 270px;*/
+	width: 22.5%;
+	float: left;
+	margin-right: 3.333%;
+	margin-top: 30px;
+	padding: 25px 15px;
+}
+
+table{
+	width: 100%;
+	text-align: center;
+	background-color: #fff;
+	border: solid 2px #909090;
+	box-shadow: 0 0 5px rgba(0 0 0 0.3);
+	
+}
+
+.contenido.last{
+	margin-right: 0;
+	margin-top: 30px;
+}
+
+.tabla table h4{
+	font-size: 16px;
+	font-weight: 700;
+	padding-top: 35px;
+}
+
+.tabla table h3{
+	font-size: 70px;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}
+
+.tabla table h3 i{
+	font-style: normal;
+	margin: 0;
+}
+
+.tabla table h3 sup{
+	display: inline-block;
+	vertical-align: top;
+	font-size: 20px;
+	font-weight: 700;
+	position: relative;
+	top: 25px;
+}
+
+.tabla table b{
+	font-weight: 400;
+	color: #7B7B7B;
+	font-size: 14px;
+	display: block;
+	padding-bottom: 20px;
+	border-bottom: solid 1px #ccc;
+}
+
+.tabla-interna{
+	height: 40px;
+}
+
+.blue-text{
+	color: #2BA9F3;
+	font-weight: 400;
+}
+
+.yellow-text{
+	color: #EFE326;
+	font-weight: 400;
+}
+
+.orange-text{
+	color: #D16414;
+	font-weight: 400;
+}
+
+.red-text{
+	color: #BB1212;
+	font-weight: 400;
+}
+
+.selec-boton{
+	background-color: #00a1ff ;
+    color: #FFFFFF;
+    width: 100%;
+    height: 42px;
+    border-radius: 7px;
+    margin: 50px 0 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/*FOOTER*/
+.footer-color1{
+	background-color: rgb(35,49,65);
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-variant: 200;
+	font-size: 25px;
+	color: white;
+	height: 220px;
+	padding-top: 60px;
+	margin-top: 100px;
+	margin-bottom: 0;
+}
+
+.footer-color1 span{
+	color: rgb(0,173,240);
+	font-family: 'Raleway', sans-serif;
+	font-variant: 400;
+}
+
+.footer-color2{
+	background-color: rgb(21,29,38);
+	color: white;
+	height: 100px;
+	margin-top: 0;
+	padding-left: 105px;
+	padding-top:30px;
+	position: relative;
+
+}
+
+.menu-final{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	position: absolute;
+	top:50px;
+	right: 105px;
+}
+
+
+
+
+
+/*HOJA CONTACT*/
+
+.wrapper-contact{
+	background: url(../materiales/images/indexbanner-bg2.jpg) no-repeat center top;
+	min-height: 600px;
+	margin-top: 70px;
+}
+
+.wrapper-contact .updates{
+	margin-left: 80px;
+}
+
+.contacto{
+	margin-bottom: 200px;
+}
+
+.title{
+	text-align: center;
+	margin top: 280px;
+	margin-bottom: 30px;
+	position: relative;
+}
+
+.title h2{
+	margin-top: 350px;
+	font-weight: 700;
+	font-size: 30px;
+}
+
+.title p{
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.form{
+	margin-left: 80px;
+	position: relative;
+}
+
+.datos{
+	position: relative;
+}
+
+.datos input[type=txt]{
+	display: inline;
+	width: 45%;
+	font-family: inherit;
+	font-weight: 400;
+	font-size: 14px;
+	height: 35px;
+	border: solid 1px #CCC7C7;
+	border-radius: 7px ;
+	margin: 15px 0;
+}
+
+.message textarea{
+	position: absolute;
+	top:0;
+	left: 48%;
+	height: 165px;
+	width: 45%;
+	border: solid 1px #CCC7C7;
+	border-radius: 7px ;
+	margin: 15px 0;
+	font-family: inherit;
+}
+
+button{
+	position: absolute;
+	margin: 0 auto;
+	right: 48%;
+	bottom: -60px;
+	background-color: #43B0EF;
+	border-radius: 8px;
+	color: #FFFFFF;
+	height: 40px;
+	width: 140px;
+	font-size: 10px;
+	letter-spacing: 2px;
+	font-family: inherit;
+	border: none;
+}
+
+
+
+
+
+
+
+@media(max-width:860px){
+	.wrapper{
+		width:87%;
+		margin: 0 auto;
+	}
+	
+	header nav{
+		display: inline-block;
+		float: none;
+		margin-left: 20%;
+	}	
+
+	.servicios-destacos article{
+		width: 50%;
+		min-height: 300px;
+	}
+	
+	.imagen-mitad{
+		margin-top: 120px;
+	}
+
+	.carac-izq article img{
+		right: -55px;
+	}
+
+	.carac-izq article {
+		padding-right:10px; 
+	}
+
+	.carac-izq article h3{
+		font-size: 16px;
+	}
+
+	.carac-izq article p{
+		font-size: 12px;
+	}
+
+	.carac-der article img{
+		left: -50px;
+	}
+
+	.carac-der article {
+		padding-left:10px; 
+	}
+
+	.carac-der article h3{
+		font-size: 16px;
+	}
+
+	.carac-der article p{
+		font-size: 12px;
+	}
+
+
+	.contenedor-secundario{
+		margin-top: -40px;
+	}
+
+	.contenido {
+		width: 45%;
+		float: left;
+		margin-right: 2.5%;
+		margin-left: 2.5%;
+		margin-bottom: 3%;
+	}
+
+	.footer-color1{
+		height: 180px;
+		font-size: 20px;
+	}
+
+	.footer-color2 p{
+		position: relative;
+		left: 30%;
+		top:-15px;
+		padding: 0
+	}
+
+	.menu-final{
+		position: relative;
+		right: 50%;
+		top: -20px;
+	}
+}	
+
+
+
+
+
+
+@media(max-width:700px){
+	header{
+		position:static;
+		text-align: center;
+	}
+	.contenedor-inicial{
+		margin-top:0px;
+		background: none;
+	} 
+
+	header nav{
+		display: block;
+		margin-left: 0;
+	}
+
+	header nav li{
+		display: block;
+		padding: 8px 0
+	}
+
+	.main-title,
+	.main-title + p{
+		display: none;
+	}
+
+	.buscador{
+		margin-top: 0px;
+	}
+	
+	.buscador button{
+		margin: 0;
+	}
+	.servicios-destacos{
+		margin-top: 70px;
+	}
+
+	.servicios-destacos article{
+		min-height: 250px;
+	}
+
+	.servicios-destacos article img{
+		max-width: 20%
+	}
+
+	.caracteristicas{
+		float: none;
+		width: 100%;
+	}
+
+	.imagen-mitad{
+		float: none;
+		width: 50%;
+		margin: 30px auto;
+	}
+
+	.carac-izq article{
+		padding-left: 60px;
+		text-align: left;
+		margin-bottom: 60px;
+	}
+
+	.carac-izq article img{
+		left: 0;
+		/*right: auto;  regla adicional por si no toma el primer comando*/
+	}
+
+	.carac-der article{
+		padding-left: 60px;
+		text-align: left;
+		margin-bottom: 60px;
+	}
+
+	.carac-der article img{
+		left: 0;
+		/*right: auto;  regla adicional por si no toma el primer comando*/
+	}
+
+	.contenedor-secundario{
+		background-size: 100%;
+		margin-top: 0;
+	}
+
+	.tabla-precios h2{
+		padding-top: 30px;
+	}
+	.contenido{
+		margin-top: 50px
+	}
+
+	.contenido.last{
+		margin-top: 50px
+	}
+
+	.footer-color1{
+		height: 180px;
+		font-size: 20px;
+		padding: 40px 20px;
+	}
+
+	.footer-color2 p{
+		left: 25%;
+	}
+
+
+	.wrapper-contact{
+		background: none;
+	}
+
+	.updates{
+		display: none;
+	}
+	
+	.contacto{
+		margin-top: 20px;
+		margin-bottom: 60px;
+	}
+
+	.title h2{
+		margin-top: 20px;
+		font-size: 35px
+	}
+	
+	.title p{
+		font-size: 14px
+	}
+
+	.datos input[type=txt]{
+		display: inline;
+		width: 100%;
+	}
+
+	.message textarea{
+		position: static;
+		display: inline;
+		height: 165px;
+		width: 100%;
+	}
+
+	button{
+		position: static;
+		margin: 20px 250px;
+	}
+
+}
+
+
+
+
+
+
+@media(max-width:480px){
+	.buscador button{
+		width: 25%;
+		font-size: 17px;
+	}
+
+	.servicios-destacos{
+		margin-top: 20px
+	}
+	.servicios-destacos article{
+		float: none;
+		width: 100%;
+		min-height: 0;
+		margin-bottom: 45px;
+	}
+	
+	.services h2{
+		font-size: 20px;
+	}
+	
+	.services p{
+		font-size: 12px;
+	}
+
+	.tabla-precios h2{
+		font-size: 20px;
+	}
+
+	.tabla-precios p{
+		font-size: 12px;
+	}
+
+	.contenido.last{
+		margin: 0 auto;
+	}
+
+	.tabla table h4{
+		font-size: 12px;
+		padding: 0;
+		margin: 0;
+	}
+
+	.tabla table h3{
+		font-size: 60px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.tabla table h3 i{
+		font-size: 40px
+	}
+
+	.tabla table h3 sup{
+		font-size: 16px;
+		top: 25px;
+	}
+
+	.tabla table b{
+		font-weight: 400;
+		font-size: 14px;
+		padding-bottom: 20px;
+	}
+
+	.tabla-interna{
+		height: 30px;
+	}
+
+	.contenido{
+		margin-top: 35px
+	}
+
+	.contenido.last{
+		margin-top: 35px;
+		margin-left: 10px;
+	}
+
+	.footer-color1{
+		height: 120px;
+		font-size: 15px;
+		padding: 20px 10px;
+	}
+
+	.footer-color2 p{
+		left: 7%;
+	}
+
+	.contacto{
+		margin: 20px 0 60px;
+	}
+
+	.title h2{
+		margin-top: 16px;
+		font-size: 35px
+	}
+	
+	.title p{
+		font-size: 12px
+	}
+
+	.form{
+		margin: 20px 0 15px;
+	}
+
+	.datos input[type=txt]{
+		width: 100%;
+	}
+
+	.message textarea{
+		width: 100%;
+	}
+
+	button{
+		margin: 20px 180px;
+	}
+
+}
